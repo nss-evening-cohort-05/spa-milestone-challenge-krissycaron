@@ -1,57 +1,50 @@
 console.log("test");
-//Main IIFE function 
-//Create one global variable and 
-//use the IIFE pattern to augment it two times in separate JavaScript files.
-var CarLot = (function() {
+var CarLot = (function () {
+	var carContainerDiv = document.getElementById("carContainer");
+	// var carArray = [];
 
-    var carContainer = document.getElementById("carContainer");
-    var cars = [];
+	function makeCarArray(xhrData){
+		var carString = "";
+		var currentCar; 
+		for (var i=0; i<xhrData.length; i++) {
+			currentCar = xhrData.inventory[i];
 
-    function carDom(carData) {
-        console.log(carData);
-        var carString = "";
-        var currentCar;
-        for (var i = 0; i < carData.length; i++) {
-            currentCar = carData[i];
-            carString += `<div class="col-sm-5 col-md-2">`;
-            carString += `<div id="container" class="container">`;
-            carString += `<h3> Make: ${currentCar.make}</h3>`;
-            carString += `<p> Model: ${currentCar.model}</p>`;
-            carString += `<p> Year: ${currentCar.year}</p>`;
-            carString += `<p> Price: $${currentCar.price}</p>`;
-            carString += `<p> Description: ${currentCar.description}</p>`;
-            carString += `</div></div>`;
+		  currentCar += `<div class="col-sm-6 col-md-4">`;
+		  currentCar += `<div class="thumbnail">`;
+		  currentCar += `<img src="${currentCar.url}">`;
+		  currentCar += `<div class="caption">`;
+		  currentCar += `<h3>${currentCar.name}</h3>`;
+		  currentCar += `<p>Is a ${currentCar.type}</p>`;
+		  currentCar += `<p>Likes to eat: ${currentCar.food}</p>`;
+		  currentCar += `</div></div></div>`
 
-            carContainer.innerHTML = carString;
-        }
-    }
+		}
+		carContainerDiv.innerHTML = 
+	}
+	
 
-    return {
-        loadInventory: function(callback) {
-            var inventoryLoader = new XMLHttpRequest();
+	function getData(){
+		var carsData = JSON.parse(this.responseText);
+		makeCarArray(xhrData);
+	}
+	function fileFailed(){
+		alert("Inventory did Not Load, Sorry Please Try Again!");
+	}
+	
 
-            inventoryLoader.addEventListener("load", function() {
+	var carRequest = new XMLHttpRequest();
+	carRequest.addEventListener("load", getData);
+	carRequest.addEventListener("error", fileFailed);
+	carRequest.open("GET","inventory.json");
+	carRequest.send();
 
-                var carData = JSON.parse(this.responseText).cars;
-                console.log(carData)
-                cars = carData;
-                carDom(carData);
-            });
-            inventoryLoader.open("GET", "inventory.json");
-            inventoryLoader.send();
-        },
-        getInventory: function() {
-        	return cars;
-        }
-    };
+	oldCarLot.getData = function(){
 
-})(CarLot || {});
+	return carsArray;
+	}
 
+	return CarLot;
+});(CarLot || {});
 
 
-
-
-
-
-
-
+console.log("first cars",  CarLot);
