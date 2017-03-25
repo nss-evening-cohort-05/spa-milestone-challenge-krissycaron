@@ -1,21 +1,4 @@
-# Single Page Applications Milestone Challenge
-
-## Setup
-1. Clone this repository from github classroom
-1. Now run the following commands.
-
-    ```bash
-    git checkout -b challenge
-    touch index.html
-    mkdir css && touch css/styles.css
-    mkdir javascripts && touch javascripts/main.js
-    touch inventory.json
-    ```
-
-You are now ready to work in the `challenge` branch.
-
-When your work in complete, push up the branch (`git push origin challenge`) and submit the pull request on Github.
-
+# Single Page Applications Milestone Challenge\
 ## Instructions
 
 You operate a used car lot, and need to have an application where you can update the description and availability of each car in your inventory. You are going to using the Bootstrap grid to lay out your HTML structure.
