@@ -1,33 +1,26 @@
-var carContainerDiv = document.getElementById("carContainer");
-var CarLot = (function () {
-	// var carArray = [];
 
-	function makeCarArray(xhrData){
-		var carString = "";
-		var currentCar; 
-		for (var i=0; i<xhrData.length; i++) {
-			currentCar = xhrData.inventory[i];
+var CarLot = (function (oldCarLot) {
+	
+  var carArray = [
+	  {
+	    make: "",
+	    model: "",
+	    year: "",
+	    price: "",
+	    description: ""
+	  } 
+	];
 
-		  carString  += `<div class="col-sm-6 col-md-4">`;
-		  carString  += `<div class="thumbnail">`;
-		  carString  += `<img src="${xhrData.currentCar[i].url}">`;
-		  carString  += `<div class="caption">`;
-		  carString  += `<h3>${xhrData.currentCar[i].make}</h3>`;
-		  carString  += `<h6>${xhrData.currentCar[i].model}</h6>`;
-		  carString  += `<p>Year: ${xhrData.currentCar[i].year}</p>`;
-		  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
-		  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
-		  carString  += `</div></div></div>`
 
-		}
-		carContainerDiv.innerHTML = carString;
+	 function getData (){
+		var inventoryCars = JSON.parse(this.responseText);
+		carArray = inventoryCars.inventory;
+		for (var i=0; i<inventoryCars.length; i++);{
+			oldCarLot.makeCarArray(carArray[i].inventory);
+		} 
+		return carArray;
 	}
 	
-
-	function getData(){
-		var carsData = JSON.parse(this.responseText);
-		makeCarArray(xhrData);
-	}
 	function fileFailed(){
 		alert("Inventory did Not Load, Sorry Please Try Again!");
 	}
@@ -39,16 +32,11 @@ var CarLot = (function () {
 	carRequest.open("GET","inventory.json");
 	carRequest.send();
 
-	// .getData = function(){
-
-	// return carsArray;
-	// }
-
-	return CarLot;
-});(CarLot || {});
+		oldCarLot.getXhr = function(){
+		return carsArray;
+		}
+	return oldCarLot;
 
 
-console.log("test", CarLot.getData());
-
-// console.log("Planets with people ", SolarSystem.getPlanetsLandedPeopleOn()); //setter displaying the hidden variable property PlanetsLandedPeopleOn
+})(CarLot || {});
 
