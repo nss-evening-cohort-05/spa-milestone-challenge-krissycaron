@@ -1,6 +1,5 @@
-console.log("test");
+var carContainerDiv = document.getElementById("carContainer");
 var CarLot = (function () {
-	var carContainerDiv = document.getElementById("carContainer");
 	// var carArray = [];
 
 	function makeCarArray(xhrData){
@@ -49,4 +48,7 @@ var CarLot = (function () {
 });(CarLot || {});
 
 
-console.log("test", CarLot);
+console.log("test", CarLot.getData());
+
+// console.log("Planets with people ", SolarSystem.getPlanetsLandedPeopleOn()); //setter displaying the hidden variable property PlanetsLandedPeopleOn
+
