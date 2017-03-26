@@ -21,7 +21,7 @@ var CarLot = (function () {
 		  carString  += `</div></div></div>`
 
 		}
-		carContainerDiv.innerHTML = ca
+		carContainerDiv.innerHTML = carString;
 	}
 	
 
@@ -49,4 +49,4 @@ var CarLot = (function () {
 });(CarLot || {});
 
 
-console.log(CarLot);
+console.log("test", CarLot);
