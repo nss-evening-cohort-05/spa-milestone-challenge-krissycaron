@@ -1,4 +1,4 @@
-var CarLot((oldCarLot){
+var CarLot = (function(oldCarLot){
 	
 	var carContainerDiv = document.getElementById("carContainer");
 	var xhrData;	
@@ -27,6 +27,7 @@ var CarLot((oldCarLot){
 
 })(CarLot || {});
 
+console.log("write to dom", CarLot);
 
 	
 

@@ -1,42 +1,37 @@
 
 var CarLot = (function (oldCarLot) {
-	
-  var carArray = [
-	  {
-	    make: "",
-	    model: "",
-	    year: "",
-	    price: "",
-	    description: ""
-	  } 
-	];
 
+	var inventoryCars = [];	
+  
+	return {
+		loadInventoryCars: function (callBack){
+			var carRequest = new XMLHttpRequest();
+			carRequest.addEventListener("load", getData);
+			carRequest.addEventListener("error", fileFailed);
+			carRequest.open("GET","inventory.json");
+			carRequest.send();
 
-	 function getData (){
-		var inventoryCars = JSON.parse(this.responseText);
-		carArray = inventoryCars.inventory;
-		for (var i=0; i<inventoryCars.length; i++);{
-			oldCarLot.makeCarArray(carArray[i].inventory);
+		}
+	}
+	function getData (){
+		var jcars = JSON.parse(this.responseText);
+		inventoryCars = jcars.inventory;
+		for (var i=0; i<jcars.length; i++);{
+			oldCarLot.makeCarArray(inventoryCars[i].inventory);
 		} 
-		return carArray;
+		return inventoryCars;
 	}
 	
 	function fileFailed(){
 		alert("Inventory did Not Load, Sorry Please Try Again!");
 	}
 	
-
-	var carRequest = new XMLHttpRequest();
-	carRequest.addEventListener("load", getData);
-	carRequest.addEventListener("error", fileFailed);
-	carRequest.open("GET","inventory.json");
-	carRequest.send();
-
-		oldCarLot.getXhr = function(){
-		return carsArray;
+		oldCarLot.getData = function(){
+		return inventoryCars;
 		}
 	return oldCarLot;
 
-
 })(CarLot || {});
+
+console.log("first carlot", CarLot);
 
