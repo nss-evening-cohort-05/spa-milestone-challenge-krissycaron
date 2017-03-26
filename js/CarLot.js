@@ -9,17 +9,19 @@ var CarLot = (function () {
 		for (var i=0; i<xhrData.length; i++) {
 			currentCar = xhrData.inventory[i];
 
-		  currentCar += `<div class="col-sm-6 col-md-4">`;
-		  currentCar += `<div class="thumbnail">`;
-		  currentCar += `<img src="${currentCar.url}">`;
-		  currentCar += `<div class="caption">`;
-		  currentCar += `<h3>${currentCar.name}</h3>`;
-		  currentCar += `<p>Is a ${currentCar.type}</p>`;
-		  currentCar += `<p>Likes to eat: ${currentCar.food}</p>`;
-		  currentCar += `</div></div></div>`
+		  carString  += `<div class="col-sm-6 col-md-4">`;
+		  carString  += `<div class="thumbnail">`;
+		  carString  += `<img src="${xhrData.currentCar[i].url}">`;
+		  carString  += `<div class="caption">`;
+		  carString  += `<h3>${xhrData.currentCar[i].make}</h3>`;
+		  carString  += `<h6>${xhrData.currentCar[i].model}</h6>`;
+		  carString  += `<p>Year: ${xhrData.currentCar[i].year}</p>`;
+		  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
+		  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
+		  carString  += `</div></div></div>`
 
 		}
-		carContainerDiv.innerHTML = 
+		carContainerDiv.innerHTML = ca
 	}
 	
 
