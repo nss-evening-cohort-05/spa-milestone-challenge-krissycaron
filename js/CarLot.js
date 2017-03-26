@@ -40,13 +40,13 @@ var CarLot = (function () {
 	carRequest.open("GET","inventory.json");
 	carRequest.send();
 
-	oldCarLot.getData = function(){
+	// .getData = function(){
 
-	return carsArray;
-	}
+	// return carsArray;
+	// }
 
 	return CarLot;
 });(CarLot || {});
 
 
-console.log("first cars",  CarLot);
+console.log(CarLot);
