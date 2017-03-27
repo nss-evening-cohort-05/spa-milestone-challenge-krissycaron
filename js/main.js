@@ -1,14 +1,17 @@
+
 var CarLot = (function(oldCarLot){
-	
 	var carContainerDiv = document.getElementById("carContainer");
-	var xhrData;	
-		function makeCarArray(xhrData){
+	var carCard = document.getElementById("carInventoryCard")
+	
+
+		oldCarLot.printToDom = function makeCarArray(){
+			var 
 			var carString = "";
 			var currentCar; 
 			for (var i=0; i<xhrData.length; i++) {
 				currentCar = xhrData.inventory[i];
 
-			  carString  += `<div class="col-sm-6 col-md-4">`;
+			  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
 			  carString  += `<div class="thumbnail">`;
 			  carString  += `<img src="${xhrData.currentCar[i].url}">`;
 			  carString  += `<div class="caption">`;

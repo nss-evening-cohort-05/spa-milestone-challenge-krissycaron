@@ -1,37 +1,46 @@
-
-var CarLot = (function (oldCarLot) {
-
-	var inventoryCars = [];	
+var CarLot = (function () {
   
-	return {
-		loadInventoryCars: function (callBack){
-			var carRequest = new XMLHttpRequest();
-			carRequest.addEventListener("load", getData);
-			carRequest.addEventListener("error", fileFailed);
-			carRequest.open("GET","inventory.json");
-			carRequest.send();
+  return {
+      
+      loadThings :  inventoryCars = [];
+      var createCars = new XMLHttpRequest(); 
+        createCars.addEventListener("load", getData);
+        createCars.addEventListener("error", fileFailed);
+        createCars.open("GET", "inventory.json");
+        createCars.send();
+      
+  },
 
-		}
-	}
-	function getData (){
-		var jcars = JSON.parse(this.responseText);
-		inventoryCars = jcars.inventory;
-		for (var i=0; i<jcars.length; i++);{
-			oldCarLot.makeCarArray(inventoryCars[i].inventory);
-		} 
-		return inventoryCars;
-	}
-	
-	function fileFailed(){
-		alert("Inventory did Not Load, Sorry Please Try Again!");
-	}
-	
-		oldCarLot.getData = function(){
-		return inventoryCars;
-		}
-	return oldCarLot;
+   function getData() {
+        var carData = JSON.parse(this.responseText).cars;
+        CarLot.printToDom(carData);
+      };
 
+    function fileFailed() {
+          alert("Error loading page, Please open dev tools")
+    },
+    
+
+        //getter Inventory
+      getCars : function () {
+
+        return inventory; 
+      }
+      
+      //setter 
+
+      setCars : function(inventoryFile){
+        inventory.push(inventoryFile);
+      }
+    
+
+    }
+  };
 })(CarLot || {});
 
-console.log("first carlot", CarLot);
+console.log("hi", CarLot);
 
+    // loadInventory = function(callback){
+    //   for (var i=0; callback.cars.length; i++);
+    //     inventory.push(callback.cars[i]);
+    // }
