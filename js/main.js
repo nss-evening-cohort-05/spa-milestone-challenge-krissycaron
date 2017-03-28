@@ -1,7 +1,14 @@
 var CarLot = (function(oldCarLot) {
 	oldCarLot.selected = function(){
-		var selected = event
-	}
+		var selected = event.target.parentNode;
+		if (selected.classList.contains("caption")){
+			selected = parentNode;
+		} 	for (var h=0; h<carCardClass; h++){
+				carCardClass[h].classList.remove("highlight");
+				carCardClass[h].classList.add("blackBorder");
+			}
+		};
+
 })(CarLot || {});
 
 
@@ -12,6 +19,21 @@ var CarLot = (function(oldCarLot) {
 
 
 // function from WYSIWYG
+// inputTextFromDOM.addEventListener("keypress", function (event) {
+// 	var	editBio=selectedBio
+// 		editBio.innerHTML= "";
+// 	var mimickText=inputTextFromDOM.value;
+// 	editBio.innerHTML += mimickText;
+// 	console.log(editBio);
+// 	// inputTextFromDOM.value=== "";
+// });
+
+// inputTextFromDOM.addEventListener("keypress", clearInput); 
+// function clearInput(event){
+// 	if (event.keyCode === 13) {
+// 		inputTextFromDOM.value = "";
+// 	}
+// }
 // function selectedFamousPerson(e) {
 // 	var peopleCards = document.getElementsByClassName("person");
 //   for (var i = 0; i < famousPeople.length; i++) {
@@ -19,13 +41,13 @@ var CarLot = (function(oldCarLot) {
 //   }
 // 	if (e.target.classList.contains("person")) {
 //   		e.target.classList.add("selected");
-//   		selectedBio = e.target.childNodes[3].childNodes[1];
+// 
 // 	} else if (e.target.classList.contains("child")) {
 // 		e.target.parentNode.classList.add("selected");
-// 		selectedBio = e.target.parentNode.childNodes[3].childNodes[1];
+/
 // 	} else if (e.target.classList.contains("grandChild")) {
 // 		e.target.parentNode.parentNode.classList.add("selected");
-// 		selectedBio = e.target.parentNode.parentNode.childNodes[3].childNodes[1];
+//;
 // 	} 
 // 	// When you click on one of the person elements, the text input should immediately gain focus so that you can start typing.
 // 	inputTextFromDOM.focus();

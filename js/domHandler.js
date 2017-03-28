@@ -8,7 +8,6 @@ var carDescription = document.getElementsByTagName("p");
 function printToDom(xhrData){
 	var carString = "";
 	for (var i=0; i<xhrData.length; i++) {
-		if (i%3 === 0){
 			carString +=`<div> class="row">`
 		}
 		// currentCar = xhrData.inventory[i];
@@ -23,15 +22,14 @@ function printToDom(xhrData){
 	  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
 	  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
 	  carString  += `</div></div></div>`;
-	  if (1%3 ===2){
-	  	carString+=`</div>`;
 	  }
 
 	}
 	carContainerDiv.innerHTML = carString;
 }
+car
 
 
 
-CarLot.loadInventory();
+// CarLot.loadInventory();
 console.log(printToDom);
