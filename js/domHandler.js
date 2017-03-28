@@ -4,9 +4,9 @@ var carContainerDiv = document.getElementById("carContainer");
 var carCardClass = document.getElementsByClassName("thumbnail");
 var textBoxNav = document.getElementById("userInputBox");
 var carDescription = document.getElementsByTagName("p");
+var carString = "";
 
 function printToDom(xhrData){
-	var carString = "";
 	for (var i=0; i<xhrData.length; i++) {
 			carString +=`<div> class="row">`
 		}
@@ -23,11 +23,9 @@ function printToDom(xhrData){
 	  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
 	  carString  += `</div></div></div>`;
 	  }
-
-	}
 	carContainerDiv.innerHTML = carString;
-}
-car
+
+window.addEventListener("loadInventory", CarLot)
 
 
 

@@ -1,16 +1,3 @@
-var CarLot = (function(oldCarLot) {
-	oldCarLot.selected = function(){
-		var selected = event.target.parentNode;
-		if (selected.classList.contains("caption")){
-			selected = parentNode;
-		} 	for (var h=0; h<carCardClass; h++){
-				carCardClass[h].classList.remove("highlight");
-				carCardClass[h].classList.add("blackBorder");
-			}
-		};
-
-})(CarLot || {});
-
 
 
 
