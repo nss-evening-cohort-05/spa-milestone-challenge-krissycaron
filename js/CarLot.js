@@ -23,15 +23,15 @@ var CarLot = (function (oldCarLot) {
     
 
         //getter Inventory
-      getCars : function(inventoryFile) {
+      getCars : function() {
 
         return inventory; 
       }
       
       //setter 
 
-      setCars : function(inventoryFile){
-        inventory.push(inventoryFile);
+      setCars : function(){
+        inventory.push(inventory);
       }
     
   };

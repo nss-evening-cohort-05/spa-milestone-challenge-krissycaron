@@ -1,5 +1,7 @@
 
 var CarLot = (function(oldCarLot){
+	
+
 	var carContainerDiv = document.getElementById("carContainer");
 	var carCard = document.getElementById("carInventoryCard")
 	
