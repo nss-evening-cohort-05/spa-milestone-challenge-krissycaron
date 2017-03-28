@@ -1,5 +1,9 @@
+//Create one global variable (e.g. CarLot) 
+// and use the IIFE pattern to augment it two times in separate JavaScript files.
 var CarLot = (function (oldCarLot) {
   
+  // The first IIFE should add a public function (e.g. loadInventory) that loads the inventory.json file
+  //and stores the inventory in a private variable.
   return {
       
       loadInventory :  function (){
@@ -19,17 +23,18 @@ var CarLot = (function (oldCarLot) {
      fileFailed : function() {
           alert("Error loading page, Please open dev tools");
       },
-    
+ 
+// It should also expose a public getter to read the array of cars (e.g. getInventory).
 
       //getter Inventory
-    getCars : function() {
+    getInventory : function() {
 
         return inventory; 
       },
       
       //setter 
 
-    setCars : function(){
+    setInventory  : function(){
         inventory.push(inventory);
       },
     
