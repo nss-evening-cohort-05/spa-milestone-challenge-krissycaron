@@ -1,14 +1,15 @@
-var CarLot = (function () {
+var CarLot = (function (oldCarLot) {
   
   return {
       
-      loadThings :  inventoryCars = [];
+      loadInventory :  function (){
+      var inventoryCars = [];
       var createCars = new XMLHttpRequest(); 
         createCars.addEventListener("load", getData);
         createCars.addEventListener("error", fileFailed);
         createCars.open("GET", "inventory.json");
         createCars.send();
-      
+      },
   },
 
    function getData() {
@@ -18,11 +19,11 @@ var CarLot = (function () {
 
     function fileFailed() {
           alert("Error loading page, Please open dev tools")
-    },
+      }
     
 
         //getter Inventory
-      getCars : function () {
+      getCars : function(inventoryFile) {
 
         return inventory; 
       }
@@ -33,14 +34,7 @@ var CarLot = (function () {
         inventory.push(inventoryFile);
       }
     
-
-    }
   };
 })(CarLot || {});
 
 console.log("hi", CarLot);
-
-    // loadInventory = function(callback){
-    //   for (var i=0; callback.cars.length; i++);
-    //     inventory.push(callback.cars[i]);
-    // }

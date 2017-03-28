@@ -5,7 +5,6 @@ var CarLot = (function(oldCarLot){
 	
 
 		oldCarLot.printToDom = function makeCarArray(){
-			var 
 			var carString = "";
 			var currentCar; 
 			for (var i=0; i<xhrData.length; i++) {
