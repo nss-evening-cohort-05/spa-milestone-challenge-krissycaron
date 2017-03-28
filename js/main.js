@@ -1,6 +1,6 @@
 
 var carContainerDiv = document.getElementById("carContainer");
-		// var carCard = document.getElementById("carInventoryCard")
+var carCard = document.getElementById("carInventoryCard")
 	var CarLot = (function(oldCarLot){
 		oldCarLot.printToDom = function(xhrData){
 			var carString = "";
@@ -21,13 +21,12 @@ var carContainerDiv = document.getElementById("carContainer");
 			}
 			carContainerDiv.innerHTML = carString;
 		console.log(printToDom);
-
-		return oldCarLot;
 		};
 
-})(CarLot || {});
+		return oldCarLot;
 
-console.log("write to dom", CarLot);
+})(CarLot || {});
+x
 // console.log("write to dom", oldCarLot);
 
 	
