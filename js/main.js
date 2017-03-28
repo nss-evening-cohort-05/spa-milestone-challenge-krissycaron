@@ -1,12 +1,8 @@
 
-var CarLot = (function(oldCarLot){
-	
-
-	var carContainerDiv = document.getElementById("carContainer");
-	var carCard = document.getElementById("carInventoryCard")
-	
-
-		oldCarLot.printToDom = function makeCarArray(){
+var carContainerDiv = document.getElementById("carContainer");
+		// var carCard = document.getElementById("carInventoryCard")
+	var CarLot = (function(oldCarLot){
+		oldCarLot.printToDom = function(xhrData){
 			var carString = "";
 			var currentCar; 
 			for (var i=0; i<xhrData.length; i++) {
@@ -22,16 +18,17 @@ var CarLot = (function(oldCarLot){
 			  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
 			  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
 			  carString  += `</div></div></div>`
-
 			}
 			carContainerDiv.innerHTML = carString;
-		};
+		console.log(printToDom);
 
 		return oldCarLot;
+		};
 
 })(CarLot || {});
 
 console.log("write to dom", CarLot);
+// console.log("write to dom", oldCarLot);
 
 	
 

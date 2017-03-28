@@ -9,30 +9,29 @@ var CarLot = (function (oldCarLot) {
         createCars.addEventListener("error", fileFailed);
         createCars.open("GET", "inventory.json");
         createCars.send();
-      },
-  },
+    },
 
-   function getData() {
+     getData : function() {
         var carData = JSON.parse(this.responseText).cars;
         CarLot.printToDom(carData);
-      };
+      },
 
-    function fileFailed() {
-          alert("Error loading page, Please open dev tools")
-      }
+     fileFailed : function() {
+          alert("Error loading page, Please open dev tools");
+      },
     
 
-        //getter Inventory
-      getCars : function() {
+      //getter Inventory
+    getCars : function() {
 
         return inventory; 
-      }
+      },
       
       //setter 
 
-      setCars : function(){
+    setCars : function(){
         inventory.push(inventory);
-      }
+      },
     
   };
 })(CarLot || {});
