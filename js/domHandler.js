@@ -7,7 +7,8 @@ var carDescription = document.getElementsByTagName("p");
 var carString = "";
 var submitBtn = document.getElementById("submitBtn");
 
-function printToDom(xhrData){
+
+function carInfo(xhrData){
 	for (var i=0; i<xhrData.length; i++) {
 			carString +=`<div> class="row">`
 		}
@@ -26,7 +27,7 @@ function printToDom(xhrData){
 	  }
 	carContainerDiv.innerHTML = carString;
 
-submitBtn.addEventListener("click", printToDom);
+submitBtn.addEventListener("click", carInfo);
 
 
 // CarLot.loadInventory(inventory);

@@ -39,6 +39,9 @@ var CarLot = (function (oldCarLot) {
       },
     
   };
+
 })(CarLot || {});
+
+
 
 console.log("hi", CarLot);
