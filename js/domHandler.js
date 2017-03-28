@@ -29,5 +29,6 @@ window.addEventListener("loadInventory", CarLot)
 
 
 
+
 // CarLot.loadInventory();
-console.log(printToDom);
+console.log("what's happeneing here", printToDom);
