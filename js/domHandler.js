@@ -5,6 +5,7 @@ var carCardClass = document.getElementsByClassName("thumbnail");
 var textBoxNav = document.getElementById("userInputBox");
 var carDescription = document.getElementsByTagName("p");
 var carString = "";
+var submitBtn = document.getElementById("submitBtn");
 
 function printToDom(xhrData){
 	for (var i=0; i<xhrData.length; i++) {
@@ -14,7 +15,7 @@ function printToDom(xhrData){
 
 	  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
 	  carString  += `<div class="thumbnail">`;
-	  carString  += `<img src="${xhrData.currentCar[i].url}">`;
+	  // carString  += `<img src="${xhrData.currentCar[i].url}">`;
 	  carString  += `<div class="caption">`;
 	  carString  += `<h3>${xhrData.currentCar[i].make}</h3>`;
 	  carString  += `<h6>${xhrData.currentCar[i].model}</h6>`;
@@ -25,10 +26,12 @@ function printToDom(xhrData){
 	  }
 	carContainerDiv.innerHTML = carString;
 
-window.addEventListener("loadInventory", CarLot)
+submitBtn.addEventListener("click", printToDom);
 
 
+// CarLot.loadInventory(inventory);
+window.addEventListener("loadInventory", CarLot.loadInventory);
 
-
-// CarLot.loadInventory();
 console.log("what's happeneing here", printToDom);
+
+
