@@ -1,10 +1,17 @@
 console.log("trying to get things to print");
 
-function printToDom(){
+var carContainerDiv = document.getElementById("carContainer");
+var carCardClass = document.getElementsByClassName("thumbnail");
+var textBoxNav = document.getElementById("userInputBox");
+var carDescription = document.getElementsByTagName("p");
+
+function printToDom(xhrData){
 	var carString = "";
-	var currentCar = CarLot.getInventory();
 	for (var i=0; i<xhrData.length; i++) {
-		currentCar = xhrData.inventory[i];
+		if (i%3 === 0){
+			carString +=`<div> class="row">`
+		}
+		// currentCar = xhrData.inventory[i];
 
 	  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
 	  carString  += `<div class="thumbnail">`;
@@ -15,10 +22,16 @@ function printToDom(){
 	  carString  += `<p>Year: ${xhrData.currentCar[i].year}</p>`;
 	  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
 	  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
-	  carString  += `</div></div></div>`
-	}
+	  carString  += `</div></div></div>`;
+	  if (1%3 ===2){
+	  	carString+=`</div>`;
+	  }
 
-carString.innerHTML = carContainerDiv;
-console.log(printToDom);
-};
+	}
+	carContainerDiv.innerHTML = carString;
+}
+
+
+
+CarLot.loadInventory();
 console.log(printToDom);

@@ -1,32 +1,32 @@
-
-var carContainerDiv = document.getElementById("carContainer");
-
-	var CarLot = (function(oldCarLot){
-		oldCarLot.printToDom = function(xhrData){
-			var carString = "";
-			var currentCar; 
-			for (var i=0; i<xhrData.length; i++) {
-				currentCar = xhrData.inventory[i];
-
-			  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
-			  carString  += `<div class="thumbnail">`;
-			  carString  += `<img src="${xhrData.currentCar[i].url}">`;
-			  carString  += `<div class="caption">`;
-			  carString  += `<h3>${xhrData.currentCar[i].make}</h3>`;
-			  carString  += `<h6>${xhrData.currentCar[i].model}</h6>`;
-			  carString  += `<p>Year: ${xhrData.currentCar[i].year}</p>`;
-			  carString  += `<p>Price: ${xhrData.currentCar[i].price}</p>`;
-			  carString  += `<p>Description: ${xhrData.currentCar[i].description}</p>`;
-			  carString  += `</div></div></div>`
-			}
-			carContainerDiv.innerHTML = carString;
-		console.log(printToDom);
-		};
-
-		return oldCarLot;
-
+var CarLot = (function(oldCarLot) {
+	oldCarLot.selected = function(){
+		var selected = event
+	}
 })(CarLot || {});
-// console.log("write to dom", oldCarLot);
 
-	
 
+
+
+
+
+
+
+// function from WYSIWYG
+// function selectedFamousPerson(e) {
+// 	var peopleCards = document.getElementsByClassName("person");
+//   for (var i = 0; i < famousPeople.length; i++) {
+//   	peopleCards[i].classList.remove("selected")
+//   }
+// 	if (e.target.classList.contains("person")) {
+//   		e.target.classList.add("selected");
+//   		selectedBio = e.target.childNodes[3].childNodes[1];
+// 	} else if (e.target.classList.contains("child")) {
+// 		e.target.parentNode.classList.add("selected");
+// 		selectedBio = e.target.parentNode.childNodes[3].childNodes[1];
+// 	} else if (e.target.classList.contains("grandChild")) {
+// 		e.target.parentNode.parentNode.classList.add("selected");
+// 		selectedBio = e.target.parentNode.parentNode.childNodes[3].childNodes[1];
+// 	} 
+// 	// When you click on one of the person elements, the text input should immediately gain focus so that you can start typing.
+// 	inputTextFromDOM.focus();
+// }
