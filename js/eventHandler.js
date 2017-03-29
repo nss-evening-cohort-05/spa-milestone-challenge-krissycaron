@@ -50,7 +50,7 @@ function getData() {
     var carData = JSON.parse(this.responseText).cars;
     carInfo();
     console.log("xhrData returned", getData)
-}
+};
 
 function pullData(){
 	inventoryCars = xhrData.inventory;	
@@ -59,10 +59,8 @@ function pullData(){
 			console.log(carArray);
 				
 			}
+		carInfo(); 
 		}
-	}
-	printToDom(); 
-}
 
-console.log("CarLot");
+console.log("carInfo");
 
