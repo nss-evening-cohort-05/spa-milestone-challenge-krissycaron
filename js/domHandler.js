@@ -33,6 +33,6 @@ submitBtn.addEventListener("click", carInfo);
 // CarLot.loadInventory(inventory);
 window.addEventListener("loadInventory", CarLot.loadInventory);
 
-console.log("what's happeneing here", printToDom);
+console.log("what's happening here", carInfo);
 
 

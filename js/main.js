@@ -31,7 +31,6 @@
 // 
 // 	} else if (e.target.classList.contains("child")) {
 // 		e.target.parentNode.classList.add("selected");
-/
 // 	} else if (e.target.classList.contains("grandChild")) {
 // 		e.target.parentNode.parentNode.classList.add("selected");
 //;
