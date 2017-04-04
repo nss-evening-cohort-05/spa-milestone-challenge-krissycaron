@@ -16,6 +16,30 @@
       "description": "This is an immaculate 2012 Kia Sportage with only 89000 miles on it. Sun Roof, power everything.",
       "url": "http://o.aolcdn.com/commerce/autodata/images/USC70KIS011A021001.jpg"
     },
+    {
+      "make": "Chevy",
+      "model": "Exionox",
+      "year": "2004",
+      "price": "3999",
+      "description": "This Chevy is in great shape, power everything, new tires 120000 miles.",
+      "url":"http://images.thecarconnection.com/lrg/2010-chevrolet-equinox-by-rex-roy_100182518_l.jpg"
+    },
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8999",
+      "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything.",
+      "url": "http://blog.caranddriver.com/wp-content/uploads/2011/11/2012-Nissan-Rogue.jpg"
+    },
+     {
+      "make": "Kia",
+      "model": "Sportage",
+      "year": "2012",
+      "price": "7999",
+      "description": "This is an immaculate 2012 Kia Sportage with only 89000 miles on it. Sun Roof, power everything.",
+      "url": "http://o.aolcdn.com/commerce/autodata/images/USC70KIS011A021001.jpg"
+    },
      {
       "make": "Chevy",
       "model": "Exionox",

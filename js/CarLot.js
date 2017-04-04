@@ -4,6 +4,15 @@ var CarLot = (function (oldCarLot) {
   
   // The first IIFE should add a public function (e.g. loadInventory) that loads the inventory.json file
   //and stores the inventory in a private variable.
+  function getData (){
+    var carData = JSON.parse(this.responseText).cars;
+    console.log(carData);
+    carInfo(carData);
+  };
+  function fileFailed() {
+      alert("Error loading page, Please open dev tools");
+  };
+
   return {
       
       loadInventory :  function (){
@@ -15,14 +24,14 @@ var CarLot = (function (oldCarLot) {
         createCars.send();
     },
 
-     getData : function() {
-        var carData = JSON.parse(this.responseText).cars;
-        CarLot.printToDom(carData);
-      },
+     // getData : function() {
+     //    var carData = JSON.parse(this.responseText).cars;
+     //    CarLot.printToDom(carData);
+     //  },
 
-     fileFailed : function() {
-          alert("Error loading page, Please open dev tools");
-      },
+     // fileFailed : function() {
+     //      alert("Error loading page, Please open dev tools");
+     //  },
  
 // It should also expose a public getter to read the array of cars (e.g. getInventory).
 
