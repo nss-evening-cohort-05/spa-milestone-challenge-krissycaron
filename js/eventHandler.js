@@ -10,7 +10,7 @@ var CarLot = (function (oldCarLot) {
 oldCarLot.activateEvents = function(){
 
 	var listOfCars = document.getElementsByClassName("carInventoryCard");
-		//loop it through the things. 
+		//loop it through the things. - Lauren Says 
 
 	listOfCars.addEventListener("click", increaseBorder);
 	function increaseBorder(){
