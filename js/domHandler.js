@@ -10,8 +10,8 @@ var submitBtn = document.getElementById("submitBtn");
 
 function carInfo(xhrData){
 	for (var i=0; i<xhrData.length; i++) {
-			carString +=`<div class="row">`
-		console.log(xhrData[i]);
+		carString +=`<div class="row">`
+		// console.log(xhrData[i]);
 
 	  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
 	  carString  += `<div class="thumbnail">`;
