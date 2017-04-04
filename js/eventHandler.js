@@ -1,66 +1,26 @@
-console.log("trying to get things to print");
+// The second IIFE should augment the original one with a function that creates all of the `eventHandlers` 
+// that you need for the application. Name the function `activateEvents`.
+var CarLot = (function (oldCarLot) {
 
-var carContainerDiv = document.getElementById("carContainer");
-var carCardClass = document.getElementsByClassName("thumbnail");
-var textBoxNav = document.getElementById("userInputBox");
-var carDescription = document.getElementsByTagName("p");
-var carString = "";
-var submitBtn = document.getElementById("submitBtn");
-var inventoryCars = [];
-var createCars = new XMLHttpRequest();
-var carArray = [];
+///////////////// Increase Border //////////////////////////
+// When you click on one of the car elements, 
+// change the width of the border to a higher value, 
+// and change the background color to any other color of your choosing.
+////////////////////////////////////////////////////////////
+oldCarLot.activateEvents = function(){
 
+	var listOfCars = document.getElementsByClassName("carInventoryCard");
+		//loop it through the things. 
 
-function carInfo(xhrData){
-	for (var i=0; carArray.length; i++) {
-			carString +=`<div> class="row">`
-		}
-		// currentCar = xhrData.inventory[i];
+	listOfCars.addEventListener("click", increaseBorder);
+	function increaseBorder(){
+		document.getElementsByClassName("carInventoryCard").style.border = "3";
+	};
+	console.log(listOfCars);
 
-	  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
-	  carString  += `<div class="thumbnail">`;
-	  // carString  += `<img src="${xhrData.currentCar[i].url}">`;
-	  carString  += `<div class="caption">`;
-	  carString  += `<h3>${carArray.currentCar[i].make}</h3>`;
-	  carString  += `<h6>${carArray.currentCar[i].model}</h6>`;
-	  carString  += `<p>Year: ${carArray.currentCar[i].year}</p>`;
-	  carString  += `<p>Price: ${carArray.currentCar[i].price}</p>`;
-	  carString  += `<p>Description: ${carArray.currentCar[i].description}</p>`;
-	  carString  += `</div></div></div>`;
-	  }
-	carContainerDiv.innerHTML = carString;
-
-submitBtn.addEventListener("click", carInfo);
-
-
-// CarLot.loadInventory(inventory);
-window.addEventListener("loadInventory", CarLot.loadInventory);
-
-// console.log("what's happeneing here", printToDom);
-
-
-function CarLot() {
-	createCars.addEventListener("load", getData);
-    createCars.addEventListener("error", fileFailed);
-    createCars.open("GET", "inventory.json");
-    createCars.send();
 };
+	
+// console.log(activateEvents);
+return oldCarLot;
 
-function getData() {
-    var carData = JSON.parse(this.responseText).cars;
-    carInfo();
-    console.log("xhrData returned", getData)
-};
-
-function pullData(){
-	inventoryCars = xhrData.inventory;	
-		for(var i=0; i<carArray.length; i++){
-			//// if its on the left it what you want it to print or add on the right is where you are getting it from.
-			console.log(carArray);
-				
-			}
-		carInfo(); 
-		}
-
-console.log("carInfo");
-
+})(CarLot || {});

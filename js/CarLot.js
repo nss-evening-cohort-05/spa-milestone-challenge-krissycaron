@@ -6,9 +6,10 @@ var CarLot = (function (oldCarLot) {
   //and stores the inventory in a private variable.
   function getData (){
     var carData = JSON.parse(this.responseText).cars;
-    console.log(carData);
+    // console.log(carData);
     carInfo(carData);
   };
+
   function fileFailed() {
       alert("Error loading page, Please open dev tools");
   };
@@ -23,29 +24,10 @@ var CarLot = (function (oldCarLot) {
         createCars.open("GET", "inventory.json");
         createCars.send();
     },
-
-     // getData : function() {
-     //    var carData = JSON.parse(this.responseText).cars;
-     //    CarLot.printToDom(carData);
-     //  },
-
-     // fileFailed : function() {
-     //      alert("Error loading page, Please open dev tools");
-     //  },
  
 // It should also expose a public getter to read the array of cars (e.g. getInventory).
 
-      //getter Inventory
-    getInventory : function() {
-
-        return inventory; 
-      },
-      
-      //setter 
-
-    setInventory  : function(){
-        inventory.push(inventory);
-      },
+  
     
   };
 

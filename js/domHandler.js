@@ -8,12 +8,13 @@ var carString = "";
 var submitBtn = document.getElementById("submitBtn");
 
 
+
 function carInfo(xhrData){
 	for (var i=0; i<xhrData.length; i++) {
 		carString +=`<div class="row">`
 		// console.log(xhrData[i]);
 
-	  carString  += `<div class="col-sm-6 col-md-4" id="carInventoryCard">`;
+	  carString  += `<div class="col-sm-6 col-md-4 carInventoryCard">`;
 	  carString  += `<div class="thumbnail">`;
 	  carString  += `<img src="${xhrData[i].url}">`;
 	  carString  += `<div class="caption">`;
@@ -25,14 +26,16 @@ function carInfo(xhrData){
 	  carString  += `</div></div></div></div>`;
 	  }
 	carContainerDiv.innerHTML = carString;
+	CarLot.activateEvents();
 };
 
-submitBtn.addEventListener("click", carInfo);
+// submitBtn.addEventListener("click", carInfo);
 
 
 // CarLot.loadInventory(inventory);
 CarLot.loadInventory();
 
 console.log("what's happening here", carInfo);
+
 
 
