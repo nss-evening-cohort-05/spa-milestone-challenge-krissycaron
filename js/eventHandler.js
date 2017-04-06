@@ -10,15 +10,17 @@ var CarLot = (function (oldCarLot) {
 oldCarLot.activateEvents = function(){
 
 	var listOfCars = document.getElementsByClassName("carInventoryCard");
-		//loop it through the things. - Lauren Says 
+	for (var k=0; k<listOfCars.length; k++){
+		listOfCars.addEventListener("click", increaseBorder);
+			function increaseBorder(){
+			document.getElementsByClassName("carInventoryCard").style.border = "3";
 
-	listOfCars.addEventListener("click", increaseBorder);
-	function increaseBorder(){
-		document.getElementsByClassName("carInventoryCard").style.border = "3";
-	};
+			}
+	 
+		}
+
+	}
 	console.log(listOfCars);
-
-};
 	
 // console.log(activateEvents);
 return oldCarLot;
