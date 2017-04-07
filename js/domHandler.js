@@ -1,5 +1,3 @@
-console.log("trying to get things to print");
-
 var carContainerDiv = document.getElementById("carContainer");
 var carCardClass = document.getElementsByClassName("thumbnail");
 var textBoxNav = document.getElementById("userInputBox");
@@ -30,6 +28,8 @@ function carInfo(xhrData){
 		  }
 	  }
 	carContainerDiv.innerHTML = carString;
+	
+
 	CarLot.activateEvents();
 };
 
@@ -37,7 +37,7 @@ function carInfo(xhrData){
 
 
 // CarLot.loadInventory(inventory);
-CarLot.loadInventory();
+CarLot.loadInventory(carInfo);
 
 console.log("what's happening here", carInfo);
 
