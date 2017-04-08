@@ -20,12 +20,9 @@ var CarLot = (function(oldCarLot){
 		console.log("inside change cards");
 	}
 
+return oldCarLot;
 
-
-
-
-
-})
+})(CarLot || {});
 
 
 

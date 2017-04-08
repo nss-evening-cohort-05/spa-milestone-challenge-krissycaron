@@ -21,7 +21,7 @@ function carInfo(xhrData){
 	  carString  += `<p>Year: ${xhrData[i].year}</p>`;
 	  carString  += `<p>Price: ${xhrData[i].price}</p>`;
 	  carString  += `<p>Description: ${xhrData[i].description}</p>`;
-	  carString  += `</div></div></div></div>`;
+	  carString  += `</div></div></div>`;
 		  if(i%3===2){
 		  	carString +=`</div>`;
 		  }
