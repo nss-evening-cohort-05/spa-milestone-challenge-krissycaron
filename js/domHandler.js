@@ -1,6 +1,5 @@
 var carContainerDiv = document.getElementById("carContainer");
 var carCardClass = document.getElementsByClassName("thumbnail");
-var textBoxNav = document.getElementById("userInputBox");
 var carDescription = document.getElementsByTagName("p");
 var carString = "";
 var submitBtn = document.getElementById("submitBtn");
@@ -33,13 +32,11 @@ function carInfo(xhrData){
 	CarLot.activateEvents();
 };
 
-// submitBtn.addEventListener("click", carInfo);
+submitBtn.addEventListener("click", carInfo);
 
-
-// CarLot.loadInventory(inventory);
 CarLot.loadInventory(carInfo);
 
-console.log("what's happening here", carInfo);
+// console.log("what's happening here", carInfo);
 
 
 

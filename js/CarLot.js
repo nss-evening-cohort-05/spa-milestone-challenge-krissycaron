@@ -35,4 +35,4 @@ var CarLot = (function (oldCarLot) {
 
 
 
-console.log("hi", CarLot);
+// console.log("hi", CarLot);
