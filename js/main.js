@@ -16,9 +16,8 @@ var CarLot = (function(oldCarLot){
 
 
 	oldCarLot.changeCards =  function(event){
-		var carClass = document.getElementsbyClassName("thumbnail");
-		var carInventory = CarLot.inventoryCars();
-		console.log(carInventory);
+		
+		console.log("inside change cards");
 	}
 
 

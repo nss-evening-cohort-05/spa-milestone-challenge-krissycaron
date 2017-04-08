@@ -4,11 +4,11 @@ var CarLot = (function (oldCarLot) {
 	// var clickedCar = getElementsByClassName("caption");
 	var textBoxNav = document.getElementById("userInputBox");
 
-console.log("inside event handler IIFE", CarLot.activateEvents());
+console.log("inside event handler IIFE", activateEvents);
 
 	oldCarLot.activateEvents = function(){
-		document.body.addEventListener("click", CarLot.changeCards);
-		console.log("change cards", );
+		// document.body.addEventListener("click", CarLot.changeCards);
+		console.log(changeCards);
 		}
 
 
