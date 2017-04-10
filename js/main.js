@@ -39,7 +39,7 @@ var CarLot = (function(oldCarLot){
 
 		// console.log(event);
 		oldCarLot.replaceText = function(event){
-				textBoxNav.onKeydown = function(){
+				textBoxNav.keypress = function(){
 					if(window.event.keyCode === 13){
 						textBoxNav.value="";
 					} else {
@@ -47,13 +47,13 @@ var CarLot = (function(oldCarLot){
 					};
 				};
 			}
-		inputTextFromDOM.addEventListener("keypress", function (event) {
+		textBoxNav.addEventListener("keypress", function (event) {
 			var	editBio=selectedCar
 				editBio.innerHTML= "";
-			var mimickText=inputTextFromDOM.value;
+			var mimickText=textBoxNav.value;
 			editBio.innerHTML += mimickText;
-	console.log(editBio);
-	// inputTextFromDOM.value=== "";
+			console.log(editBio);
+			textBoxNav.value=== "";
 });
 
 
