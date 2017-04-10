@@ -33,7 +33,7 @@ var CarLot = (function(oldCarLot){
 				textBoxNav.focus();
 				selectedCar = event.target.childNodes[3];
 				event.target.parentNode.classList.add("selected");
-			};
+			}
 			textBoxNav.value = selectedCar.innerHTML;
 		},
 
@@ -55,6 +55,9 @@ var CarLot = (function(oldCarLot){
 			console.log(editBio);
 			textBoxNav.value=== "";
 });
+		oldCarLot.clearText = function(){
+			console.log("clearText");
+		}
 
 
 return oldCarLot;
