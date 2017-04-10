@@ -20,6 +20,7 @@ var CarLot = (function(oldCarLot){
 		var carInventory = oldCarLot.loadInventory;
 		for (var k=0; k<clickedCard.length; k++);
 			clickedCard[k].classList.remove("selected");
+			console.log(document.getElementsByClassName("description grandchild"));
 			if (event.target.classList.contains("description")){
 				textBoxNav.focus();
 				selectedCar = event.target;
@@ -36,7 +37,7 @@ var CarLot = (function(oldCarLot){
 			};
 			textBoxNav.value = selectedCar.innerHTML;
 		},
-		
+
 		// console.log(event);
 		oldCarLot.replaceText = function(event){
 				textBoxNav.onKeyPress = function(){
