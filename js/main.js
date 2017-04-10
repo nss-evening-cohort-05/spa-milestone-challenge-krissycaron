@@ -34,7 +34,8 @@ var CarLot = (function(oldCarLot){
 				selectedCar = event.target.childNodes[3];
 				event.target.parentNode.classList.add("selected");
 			}
-			textBoxNav.value = selectedCar.innerHTML;
+			// textBoxNav.value = selectedCar.innerHTML;
+			console.log("selectedCar");
 		},
 
 		// console.log(event);
