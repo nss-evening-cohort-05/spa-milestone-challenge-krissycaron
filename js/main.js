@@ -17,16 +17,17 @@ var CarLot = (function(oldCarLot){
 
 	oldCarLot.changeCards =  function(event){
 		var clickedCard = document.getElementsByClassName("thumbnails");
-		var carInventory = oldCarLot.loadInventory;
+		var carInventory = oldCarLot.loadInventory();
 		for (var k=0; k<clickedCard.length; k++);
-			clickedCard[k].classList.remove("selected");
-			console.log(document.getElementsByClassName("description grandchild"));
+			// clickedCard[k].classList.remove("selected");
+			console.log(event.target);
 			if (event.target.classList.contains("description")){
 				textBoxNav.focus();
 				selectedCar = event.target;
 				event.target.parentNode.parentNode.classList.add("selected");
 				console.log(event);
-			} else if (event.target.classList.contains("grandChild")){
+			} 
+			else if (event.target.classList.contains("grandChild")){
 				textBoxNav.focus();
 				selectedCar = event.target.parentNode.childNodes[3];
 				event.target.parentNode.parentNode.classList.add("selected");
@@ -71,7 +72,7 @@ return oldCarLot;
 // 		e.target.parentNode.parentNode.classList.add("selected");
 // 		selectedBio = e.target.parentNode.parentNode.childNodes[3].childNodes[1];
 // 	} 
-// 	// When you click on one of the person elements, the text input should immediately gain focus so that you can start typing.
+// 	// When you click on one of the person ements, the text input should immediately gain focus so that you can start typing.
 // 	inputTextFromDOM.focus();
 // }
 
