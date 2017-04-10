@@ -19,8 +19,8 @@ function carInfo(xhrData){
 	  carString  += `<h3>${xhrData[i].make}</h3>`;
 	  carString  += `<h6>${xhrData[i].model}</h6>`;
 	  carString  += `<p>Year: ${xhrData[i].year}</p>`;
-	  carString  += `<p>Price: ${xhrData[i].price}</p>`;
-	  carString  += `<p>Description: ${xhrData[i].description}</p>`;
+	  carString  += `<p class="grandchild">Price: ${xhrData[i].price}</p>`;
+	  carString  += `<p class="description grandchild" id="description">Description: ${xhrData[i].description}</p>`;
 	  carString  += `</div></div></div>`;
 		  if(i%3===2){
 		  	carString +=`</div>`;
