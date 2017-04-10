@@ -10,7 +10,6 @@
 ////////////////////////////////////////////////////////////
 
 var CarLot = (function(oldCarLot){
-	var editDesc = "";
 	var selectedCar;
 	var textBoxNav = document.getElementById("userInputBox");
 
@@ -26,8 +25,7 @@ var CarLot = (function(oldCarLot){
 				selectedCar = event.target;
 				event.target.parentNode.parentNode.classList.add("selected");
 				console.log(event);
-			} 
-			else if (event.target.classList.contains("grandChild")){
+			} else if (event.target.classList.contains("grandChild")){
 				textBoxNav.focus();
 				selectedCar = event.target.parentNode.childNodes[3];
 				event.target.parentNode.parentNode.classList.add("selected");
@@ -41,7 +39,7 @@ var CarLot = (function(oldCarLot){
 
 		// console.log(event);
 		oldCarLot.replaceText = function(event){
-				textBoxNav.onKeyPress = function(){
+				textBoxNav.onKeydown = function(){
 					if(window.event.keyCode === 13){
 						textBoxNav.value="";
 					} else {
@@ -49,6 +47,15 @@ var CarLot = (function(oldCarLot){
 					};
 				};
 			}
+		inputTextFromDOM.addEventListener("keypress", function (event) {
+			var	editBio=selectedCar
+				editBio.innerHTML= "";
+			var mimickText=inputTextFromDOM.value;
+			editBio.innerHTML += mimickText;
+	console.log(editBio);
+	// inputTextFromDOM.value=== "";
+});
+
 
 return oldCarLot;
 
@@ -64,7 +71,7 @@ return oldCarLot;
 // 	  }
 // // 	if (e.target.classList.contains("person")) {
 //   		e.target.classList.add("selected");
-//   		selectedBio = e.target.childNodes[3].childNodes[1];
+//   		selectedCar = e.target.childNodes[3].childNodes[1];
 // 	} else if (e.target.classList.contains("child")) {
 // 		e.target.parentNode.classList.add("selected");
 // 		selectedBio = e.target.parentNode.childNodes[3].childNodes[1];

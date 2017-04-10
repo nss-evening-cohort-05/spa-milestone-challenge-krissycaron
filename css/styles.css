@@ -2,3 +2,6 @@
 .thumbnail {
 	border: 2px solid black;
 }
+.selected {
+	border: 4px solid black;
+}
