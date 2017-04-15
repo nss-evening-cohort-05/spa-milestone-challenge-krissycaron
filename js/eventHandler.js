@@ -6,7 +6,7 @@ var CarLot = (function (oldCarLot) {
 // console.log("inside event handler IIFE", oldCarLot.activateEvents);
 
 	oldCarLot.activateEvents = function(){
-		document.body.addEventListener("click", oldCarLot.changeCards);
+		document.body.addEventListener("click", CarLot.changeCards);
 		console.log(oldCarLot.replaceText);
 		}
 

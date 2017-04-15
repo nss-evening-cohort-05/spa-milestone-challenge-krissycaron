@@ -25,7 +25,7 @@ var CarLot = (function(oldCarLot){
 				selectedCar = event.target;
 				event.target.parentNode.parentNode.classList.add("selected");
 				console.log(event);
-			} else if (event.target.classList.contains("grandChild")){
+			} else if (event.target.classList.contains("grandchild")){
 				textBoxNav.focus();
 				selectedCar = event.target.parentNode.childNodes[3];
 				event.target.parentNode.parentNode.classList.add("selected");
@@ -33,6 +33,8 @@ var CarLot = (function(oldCarLot){
 				textBoxNav.focus();
 				selectedCar = event.target.childNodes[3];
 				event.target.parentNode.classList.add("selected");
+			} else {
+				console.log("not working!");
 			}
 			// textBoxNav.value = selectedCar.innerHTML;
 			console.log("selectedCar");
@@ -79,7 +81,7 @@ return oldCarLot;
 // 	} else if (e.target.classList.contains("child")) {
 // 		e.target.parentNode.classList.add("selected");
 // 		selectedBio = e.target.parentNode.childNodes[3].childNodes[1];
-// 	} else if (e.target.classList.contains("grandChild")) {
+// 	} else if (e.target.classList.contains("grandchild")) {
 // 		e.target.parentNode.parentNode.classList.add("selected");
 // 		selectedBio = e.target.parentNode.parentNode.childNodes[3].childNodes[1];
 // 	} 

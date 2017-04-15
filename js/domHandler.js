@@ -13,15 +13,16 @@ function carInfo(xhrData){
 		}
 
 	  carString  += `<div class="col-sm-6 col-md-4 carInventoryCard">`;
-	  carString  += `<div class="thumbnail">`;
-	  carString  += `<img src="${xhrData[i].url}">`;
-	  carString  += `<div class="caption">`;
-	  carString  += `<h3>${xhrData[i].make}</h3>`;
-	  carString  += `<h6>${xhrData[i].model}</h6>`;
-	  carString  += `<p>Year: ${xhrData[i].year}</p>`;
+	  carString  += `<div class="thumbnail child">`;
+	  carString  += `<img src="${xhrData[i].url}" class="grandchild">`;
+	  carString += `</div>`
+	  carString  += `<div class="caption" class="child">`;
+	  carString  += `<h3 class="grandchild">${xhrData[i].make}</h3>`;
+	  carString  += `<h6 class="grandchild">${xhrData[i].model}</h6>`;
+	  carString  += `<p class="grandchild">Year: ${xhrData[i].year}</p>`;
 	  carString  += `<p class="grandchild">Price: ${xhrData[i].price}</p>`;
 	  carString  += `<p class="description grandchild" id="description">Description: ${xhrData[i].description}</p>`;
-	  carString  += `</div></div></div>`;
+	  carString  += `</div></div>`;
 		  if(i%3===2){
 		  	carString +=`</div>`;
 		  }
