@@ -7,6 +7,7 @@ var submitBtn = document.getElementById("submitBtn");
 
 
 function carInfo(xhrData){
+	console.log(xhrData);
 	for (var i=0; i<xhrData.length; i++) {
 		if(i%3===0){
 		carString +=`<div class="row">`
@@ -33,7 +34,7 @@ function carInfo(xhrData){
 	CarLot.activateEvents();
 };
 
-submitBtn.addEventListener("click", carInfo);
+// submitBtn.addEventListener("click", carInfo);
 
 CarLot.loadInventory(carInfo);
 

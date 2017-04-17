@@ -16,28 +16,30 @@ var CarLot = (function(oldCarLot){
 
 	oldCarLot.changeCards =  function(event){
 		var clickedCard = document.getElementsByClassName("thumbnails");
-		var carInventory = oldCarLot.loadInventory();
+		
 		for (var k=0; k<clickedCard.length; k++);
 			// clickedCard[k].classList.remove("selected");
-			console.log(event.target);
-			if (event.target.classList.contains("description")){
+			if (event.target.classList.contains("carInventoryCard")){
 				textBoxNav.focus();
-				selectedCar = event.target;
-				event.target.parentNode.parentNode.classList.add("selected");
-				console.log(event);
-			} else if (event.target.classList.contains("grandchild")){
+				selectedCar = event.target.childNodes[1].childNodes[4];
+				event.target.classList.add("selected");
+				// console.log("selected carInventoryCard", selectedCar.childNodes[1].childNodes[4]);
+			} 
+			else if (event.target.classList.contains("grandchild")){
 				textBoxNav.focus();
-				selectedCar = event.target.parentNode.childNodes[3];
+				selectedCar = event.target.parentNode.parentNode.childNodes[1].childNodes[4];
 				event.target.parentNode.parentNode.classList.add("selected");
+				console.log("grandchild selected", selectedCar)
 			} else if (event.target.classList.contains("child")){
 				textBoxNav.focus();
-				selectedCar = event.target.childNodes[3];
+				selectedCar = event.target.parentNode.childNodes[1].childNodes[4];
 				event.target.parentNode.classList.add("selected");
-			} else {
+				console.log("selectedCar child", selectedCar);
+			}else {
 				console.log("not working!");
 			}
 			// textBoxNav.value = selectedCar.innerHTML;
-			console.log("selectedCar");
+		
 		},
 
 		// console.log(event);

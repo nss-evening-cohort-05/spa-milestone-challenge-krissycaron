@@ -7,7 +7,7 @@ var CarLot = (function (oldCarLot) {
 
 	oldCarLot.activateEvents = function(){
 		document.body.addEventListener("click", CarLot.changeCards);
-		console.log(oldCarLot.replaceText);
+		// console.log(oldCarLot.replaceText);
 		}
 
 

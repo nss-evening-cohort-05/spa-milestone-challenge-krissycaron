@@ -4,5 +4,5 @@
 }
 .selected {
 	border: 4px solid black;
-	text-decoration-color: purple;
+	background-color: plum;
 }
