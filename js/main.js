@@ -15,32 +15,35 @@ var CarLot = (function(oldCarLot){
 
 
 	oldCarLot.changeCards =  function(event){
-		var clickedCard = document.getElementsByClassName("thumbnails");
-		
-		for (var k=0; k<clickedCard.length; k++);
-			// clickedCard[k].classList.remove("selected");
-			if (event.target.classList.contains("carInventoryCard")){
-				textBoxNav.focus();
-				selectedCar = event.target.childNodes[1].childNodes[4];
-				event.target.classList.add("selected");
-				// console.log("selected carInventoryCard", selectedCar.childNodes[1].childNodes[4]);
-			} 
-			else if (event.target.classList.contains("grandchild")){
-				textBoxNav.focus();
-				selectedCar = event.target.parentNode.parentNode.childNodes[1].childNodes[4];
-				event.target.parentNode.parentNode.classList.add("selected");
-				console.log("grandchild selected", selectedCar)
-			} else if (event.target.classList.contains("child")){
-				textBoxNav.focus();
-				selectedCar = event.target.parentNode.childNodes[1].childNodes[4];
-				event.target.parentNode.classList.add("selected");
-				console.log("selectedCar child", selectedCar);
-			}else {
-				console.log("not working!");
-			}
-			// textBoxNav.value = selectedCar.innerHTML;
-		
-		},
+		var clickedCard = document.getElementsByClassName("carInventoryCard");
+		console.log("clickedCard", clickedCard);
+		textBoxNav.value="";
+		for (var k=0; k<clickedCard.length; k++){
+		console.log("clickedCard", clickedCard);
+			clickedCard[k].classList.remove("selected");
+
+		}
+		if (event.target.classList.contains("carInventoryCard")){
+			// textBoxNav.focus();
+			selectedCar = event.target.childNodes[1].childNodes[4];
+			event.target.classList.add("selected");
+			// console.log("selected carInventoryCard", selectedCar.childNodes[1].childNodes[4]);
+		} 
+		else if (event.target.classList.contains("grandchild")){
+			// textBoxNav.focus();
+			selectedCar = event.target.parentNode.parentNode.childNodes[1].childNodes[4];
+			event.target.parentNode.parentNode.classList.add("selected");
+			console.log("grandchild selected", selectedCar)
+		} else if (event.target.classList.contains("child")){
+			// textBoxNav.focus();
+			selectedCar = event.target.parentNode.childNodes[1].childNodes[4];
+			event.target.parentNode.classList.add("selected");
+			console.log("selectedCar child", selectedCar);
+		}else {
+			console.log("not working!");
+		}
+		textBoxNav.focus(); // only need this in one spot outside of my for loop ... leaving this note for commit
+		};
 
 		// console.log(event);
 		oldCarLot.replaceText = function(event){
