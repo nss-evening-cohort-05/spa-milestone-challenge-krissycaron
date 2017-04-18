@@ -1,7 +1,4 @@
-/*Make sure that each car card element has a CSS class which adds a black border around it.*/
-.thumbnail {
-	border: 2px solid black;
-}
+/*Make sure that each car card element has a CSS class which adds a black border around it & changes color*/
 .selected {
 	border: 4px solid black;
 	background-color: plum;

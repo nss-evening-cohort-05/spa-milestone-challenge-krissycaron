@@ -34,7 +34,7 @@ function carInfo(xhrData){
 	CarLot.activateEvents();
 };
 
-// submitBtn.addEventListener("click", carInfo);
+submitBtn.addEventListener("click", carInfo);
 
 CarLot.loadInventory(carInfo);
 

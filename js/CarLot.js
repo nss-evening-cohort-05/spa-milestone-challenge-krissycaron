@@ -6,7 +6,6 @@ var CarLot = (function (oldCarLot) {
   //and stores the inventory in a private variable.
   function getData (){
     var carData = JSON.parse(this.responseText).cars;
-    // console.log(carData);
     carInfo(carData);
   };
 
@@ -34,7 +33,3 @@ var CarLot = (function (oldCarLot) {
   return oldCarLot;
 
 })(CarLot || {});
-
-
-
-// console.log("hi", CarLot);
