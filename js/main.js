@@ -42,11 +42,9 @@ var CarLot = (function(oldCarLot){
 				editBio.innerHTML= "";
 			var mimickText=textBoxNav.value;
 			editBio.innerHTML += mimickText;
-			console.log(editBio);
 			textBoxNav.value=== "";
 });
 		oldCarLot.clearText = function(){
-			console.log("clearText");
 		}
 
 
